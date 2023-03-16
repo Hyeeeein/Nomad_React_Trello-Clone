@@ -14,11 +14,6 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 `;
 
 const Boards = styled.div`
@@ -28,6 +23,12 @@ const Boards = styled.div`
   gap: 10px;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
+`;
+
+const DeleteArea = styled.div`
+  width: 260px;
+  display: flex;
+  justify-content: center;
 `;
 
 const App = () => {
@@ -103,9 +104,9 @@ const App = () => {
         </Boards>
         <Droppable droppableId="delete">
           {(magic) => (
-            <div ref={magic.innerRef}>
+            <DeleteArea ref={magic.innerRef}>
               <FaTrashAlt size={30} />
-            </div>
+            </DeleteArea>
           )}
         </Droppable>
       </Wrapper>

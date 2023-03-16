@@ -25,9 +25,9 @@ const Title = styled.h2`
 const Area = styled.div<IAreaProps>`
   background-color: ${(props) =>
     props.isDraggingOver
-      ? "#ffead1"
+      ? "red"
       : props.draggingFromThisWith
-      ? "#F1DBBF"
+      ? "green"
       : "transparent"};
   flex-grow: 1;
   transition: background-color 0.3s ease-in-out;
@@ -118,7 +118,6 @@ const Board = ({ todos, boardId }: IBoardProps) => {
               />
             ))}
             {magic.placeholder}
-            {/* => 요소가 움직이느라 비어있을 때 채워주는 기능 */}
           </Area>
         )}
       </Droppable>
